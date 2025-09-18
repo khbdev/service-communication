@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  user-service:
+    build: ./userService
+    container_name: user-service
+    ports:
+      - "8082:8082"
+    depends_on:
+      - product-service
+
+  product-service:
+    build: ./productService
+    container_name: product-service
+    ports:
+      - "8083:8083"
+
+  api_gateway:
+    build: ./apiGateway
+    container_name: apigateway-service
+    ports:
+      - "8081:8081"
