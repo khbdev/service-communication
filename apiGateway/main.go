@@ -1,8 +1,11 @@
+// main.go
 package main
 
-import "GeteWay/router"
+import (
+	"GeteWay/router"
+)
 
 func main() {
 	r := router.SetupRouter()
-	r.Run(":8081") // Gateway port
+	r.Run(":8081")
 }
